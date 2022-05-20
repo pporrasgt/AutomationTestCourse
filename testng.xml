@@ -6,4 +6,9 @@
             <class name="testngdemo.FistTestingTest"></class>
         </classes>
     </test>
+    <test name="Package Execution">
+        <packages>
+            <package name="testngdemo"></package>
+        </packages>
+    </test>
 </suite>
