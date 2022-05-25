@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG Example">
+    <parameter name="FirstNumber" value="5"></parameter>
+    <parameter name="SecondNumber" value="7"></parameter>
+    <test name="Parameters Example">
+        <classes>
+            <class name="testngparameters.TestngParametersExample"></class>
+        </classes>
+    </test>
+
+
+<!--    <test name="Class execution">-->
+<!--        <classes>-->
+<!--            <class name="testngdemo.FistTestingTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="Package Execution">-->
+<!--        <packages>-->
+<!--            <package name="testngdemo"></package>-->
+<!--        </packages>-->
+<!--    </test>-->
+</suite>
