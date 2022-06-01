@@ -8,6 +8,17 @@
             <class name="testngparameters.TestngParametersExample"></class>
         </classes>
     </test>
+    <test name="Run by group name">
+        <groups>
+            <run>
+                <include name="get" />
+            </run>
+        </groups>
+        <classes>
+            <class name="apitesting.GetRequestsAPIDemo"></class>
+        </classes>
+
+    </test>
 
 
 <!--    <test name="Class execution">-->
