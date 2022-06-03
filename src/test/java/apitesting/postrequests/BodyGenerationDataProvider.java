@@ -12,7 +12,7 @@ public class BodyGenerationDataProvider {
     @DataProvider(name = "generateBodyContentMainClass", parallel = true)
     public static Iterator<Object[]> generateBodyContentMainClass(){
         List<Object[]> data = new ArrayList<>();
-        for(int i = 0; i < 500; i++){
+        for(int i = 0; i < 50; i++){
             JSONObject jsonObject =  new JSONObject();
             jsonObject.put("username",String.format("UserName%s",i));
             jsonObject.put("firstname",String.format("firstname%s",i));

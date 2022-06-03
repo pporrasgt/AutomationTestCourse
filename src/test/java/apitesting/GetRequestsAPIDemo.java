@@ -49,9 +49,24 @@ public class GetRequestsAPIDemo {
         System.out.println(response.asString());
         JSONArray jsonArray = new JSONArray(response.asString());
         System.out.println(jsonArray.toString(10));
-        if(jsonArray.length() > 10){
+        if(jsonArray.length() > 100){
             Assert.fail("Length should be 10");
         }
+    }
+
+    @Test(groups = {"countUsers"})
+    public void countUsersnamesWithNumberFive(){
+        int contador = 0;
+        String url = GlobalVariables.apiHost + "/users/all";
+        Response response = ExecuteRequest.makeGetRequest(url);
+        System.out.println(response.asString());
+        JSONArray jsonArray = new JSONArray(response.asString());
+        for (int i=0; i < jsonArray.length(); i++){
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            String userName = jsonObject.getString("username");
+            if (userName.contains("5")) contador++;
+        }
+        System.out.println("El numero de usuarios que contiene el numero 5 es: "+contador);
     }
 
     @Test
@@ -59,8 +74,10 @@ public class GetRequestsAPIDemo {
         String url = GlobalVariables.apiHost +  "/users/findbyid/2";
         Response response = ExecuteRequest.makeGetRequest(url);
         System.out.println(response.asString());
+        System.out.println(response);
         JSONObject jsonArray = new JSONObject(response.asString());
-        System.out.println(jsonArray.toString(10));
+
+        System.out.println(jsonArray.toString(1));
         Assert.assertEquals(response.statusCode(), 200);
         Assert.assertEquals(response.jsonPath().get("id").toString(), "2");
     }
